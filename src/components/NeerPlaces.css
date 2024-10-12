@@ -1,0 +1,23 @@
+.neer-places {
+    padding: 0px 30px;
+}
+
+.neer-places h2 {
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: #204553;
+}
+
+.cards-container {
+    display: flex;
+    overflow-x: auto;
+}
+
+.cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+.cards-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
