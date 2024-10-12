@@ -7,7 +7,7 @@ import styles from '../../styles/ScanQR.module.css';
 const ScanQRPage = () => {
     // Stores the scanned QR code result
     const [scanResult, setScanResult] = useState('');
-    // Camera mode: 'environment' for rear or 'user' for front camera
+    // Camera mode: "environment" for rear or "user" for front camera
     const [cameraFacingMode, setCameraFacingMode] = useState('environment');
     // Controls the visibility of the information modal
     const [showInfoModal, setShowInfoModal] = useState(false);
