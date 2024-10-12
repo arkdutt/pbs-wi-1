@@ -1,0 +1,69 @@
+:root {
+   --primary: #2639c4;
+   --hover: rgba(38, 57, 196, 10%);
+   --secondary: #9e9e9e;
+   --shadow: #00000033;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "PBSSans";
+    src: url(/fonts/PBSSans.ttf);
+}
+
+body {
+    font-family: "PBSSans", sans-serif;
+}
+
+header {
+    background-color: var(--primary);
+    height: 80px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.logo img{
+    height: 30px;
+    position: relative;
+    top: 25px;
+    left: 25px;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%); 
+    height: 80px;
+    width: 80px;
+    background-color: var(--primary);
+    color: white;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 40px !important;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px var(--shadow);
+}
+
+
+@media (max-width: 480px) {
+    header {
+        height: 60px;   
+    }
+    .logo img {
+        height: 30px;    
+        top: 15px;
+        left: 15px;
+        position: relative; 
+    }
+}
+
+
