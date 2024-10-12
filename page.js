@@ -6,7 +6,7 @@ import styles from '../../styles/ScanQR.module.css';
 
 const ScanQRPage = () => {
     const [scanResult, setScanResult] = useState('');
-    const [cameraFacingMode, setCameraFacingMode] = useState('environment'); // 'environment' or 'user'
+    const [cameraFacingMode, setCameraFacingMode] = useState('environment'); // Camera mode: 'environment' or 'user'
     const html5QrCodeRef = useRef(null);
 
     const startCamera = () => {
@@ -30,7 +30,7 @@ const ScanQRPage = () => {
     };
 
     useEffect(() => {
-        // Cleanup QR scanner on component unmount or when cameraFacingMode changes
+        // Cleanup QR scanner on unmount or camera change
         return () => {
             if (html5QrCodeRef.current) {
                 html5QrCodeRef.current.stop().then(() => {
@@ -62,7 +62,7 @@ const ScanQRPage = () => {
                 <h1>Scan QR Code</h1>
             </div>
             
-            {/* QR Code Scanner Container */}
+            {/* QR Scanner Container */}
             <div className={styles.scannerContainer}>
                 <div className={styles.invisibleFrame}>
                     <div id="reader"></div>
@@ -79,12 +79,12 @@ const ScanQRPage = () => {
                 <button onClick={startCamera} className={styles.cameraButton}>Start Scanner</button>
             </div>
             
-            {/* Camera Toggle Button */}
+            {/* Toggle Camera Button */}
             <div className={styles.controls}>
                 <button onClick={toggleCamera} className={styles.cameraButton}>Switch Camera</button>
             </div>
             
-            {/* Display Scanned Result */}
+            {/* Scanned Result Display */}
             {scanResult && (
                 <div className={styles.result}>
                     <h2>Scanned Result:</h2>
