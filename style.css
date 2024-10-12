@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "PBSSans";
+    src: url(/fonts/PBSSans.ttf);
+}
+
+body {
+    font-family: "PBSSans", sans-serif;
+}
+
+header {
+    background-color: #2639c4;
+    height: 80px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.logo img{
+    height: 30px;
+    position: relative;
+    top: 25px;
+    left: 25px;
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 60px;   /* Adjust header height for small screens */
+    }
+    .logo img {
+        height: 30px;    /* Keep the logo height smaller */
+        top: 15px;
+        left: 15px;
+        position: relative;  /* Remove relative positioning for small screens */
+    }
+}
+
+
