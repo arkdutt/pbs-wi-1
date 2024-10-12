@@ -1,0 +1,29 @@
+.header {
+    text-align: left;
+    padding: 30px;
+    color: #204553;
+}
+
+.header h1 {
+    font-size: 50px;
+    font-weight: normal;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+.location {
+    display: flex;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.location span {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.location img {
+    width: 24px;
+    height: 24px;
+}
