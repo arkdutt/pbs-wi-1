@@ -1,3 +1,5 @@
+/* src/styles/ScanQR.module.css */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -17,22 +19,22 @@
     top: 10px;
     width: 100%;
     text-align: center;
-    font-size: 24px; /* Header font size */
+    font-size: 24px;
     z-index: 10;
     color: white;
 }
 
 .scannerContainer {
-    width: 90vw;  /* Responsive container */
+    width: 90vw;
     height: 90vw;
-    max-width: 600px; /* Maximum size */
+    max-width: 600px;
     max-height: 600px;
     position: relative;
     z-index: 1;
-    border: 2px solid #0070f3; /* Border for visibility */
+    border: 2px solid #0070f3;
     border-radius: 15px;
     overflow: hidden;
-    background-color: #000; /* Background color */
+    background-color: #000;
 }
 
 .invisibleFrame {
@@ -40,15 +42,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%; /* Match container width */
+    width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3; /* Aspect ratio */
+    aspect-ratio: 4 / 3;
 }
 
 #reader {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Fit within frame */
+    object-fit: contain;
 }
 
 .corner.tl {
@@ -80,10 +82,10 @@
 }
 
 .controls {
-    margin-top: 50px; /* Spacing above buttons */
+    margin-top: 50px;
     display: flex;
-    gap: 20px; /* Space between buttons */
-    flex-wrap: wrap; /* Wrap buttons on smaller screens */
+    gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -93,7 +95,7 @@
     border: none;
     border-radius: 8px;
     color: white;
-    font-size: 18px; /* Button font size */
+    font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -103,13 +105,13 @@
 }
 
 .result {
-    margin-top: 30px; /* Spacing above result */
+    margin-top: 30px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
     border: 2px solid #ccc;
     border-radius: 10px;
     max-width: 600px;
-    width: 80vw; /* Responsive width */
+    width: 80vw;
     text-align: center;
 }
 
@@ -119,13 +121,108 @@
 }
 
 .result p {
-    font-size: 20px; /* Font size for result text */
-    color: #ffd700; /* Gold color */
+    font-size: 20px;
+    color: #ffd700;
+}
+
+.infoOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.infoContent {
+    background: #fff;
+    color: #000;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.closeButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+    background-color: #005bb5;
 }
 
 @media (orientation: landscape) {
     .scannerContainer, #reader {
-        width: 60vh; /* Maintain square in landscape */
+        width: 60vh;
         height: 60vh;
     }
+}
+
+
+.infoButton {
+    padding: 15px 30px;
+    background-color: #28a745; /* Green button */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.infoButton:hover {
+    background-color: #218838;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* On top of everything */
+}
+
+.modalContent {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    color: #000; /* Black text */
+}
+
+.closeButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+    background-color: #005bb5;
 }
