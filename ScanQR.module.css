@@ -1,0 +1,132 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 24px; /* Adjust based on your preference */
+    z-index: 10;
+    color: white;
+}
+
+.scannerContainer {
+    width: 90vw;  /* Make the container responsive and square */
+    height: 90vw; /* Height matches the width */
+    max-width: 600px; /* Increased maximum size for better visibility */
+    max-height: 600px; /* Increased maximum size for better visibility */
+    position: relative;
+    z-index: 1; /* Ensure scanner is under the header but above other elements */
+    border: 2px solid #0070f3; /* Optional: Adds a border for visibility */
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #000; /* Ensures the container is visible if video doesn't load */
+}
+
+.invisibleFrame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Match the shorter edge of scannerContainer */
+    height: auto;
+    aspect-ratio: 4 / 3; /* Use the same aspect ratio as the media */
+}
+
+#reader {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Maintain aspect ratio and fit within the invisible frame */
+}
+
+.corner.tl {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner.tr {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner.bl {
+    bottom: 0;
+    left: 0;
+    border-top: none;
+    border-right: none;
+}
+
+.corner.br {
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+}
+
+.controls {
+    margin-top: 50px; /* Increased spacing above the buttons */
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+    justify-content: center;
+}
+
+.cameraButton {
+    padding: 15px 30px;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px; /* Increased font size for better readability */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cameraButton:hover {
+    background-color: #005bb5;
+}
+
+.result {
+    margin-top: 30px; /* Spacing above the result display */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 80vw; /* Responsive width */
+    text-align: center;
+}
+
+.result h2 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.result p {
+    font-size: 20px; /* Increased font size for better readability */
+    color: #ffd700; /* Gold color for emphasis */
+}
+
+@media (orientation: landscape) {
+    .scannerContainer, #reader {
+        width: 60vh; /* Using height-based dimension to maintain square in landscape */
+        height: 60vh;
+    }
+}
+
