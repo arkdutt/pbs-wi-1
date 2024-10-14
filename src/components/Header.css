@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'PBSSans';
+    src: url('../assets/fonts/PBSSans.ttf');
+}
+
+.header {
+    background-color: var(--primary);
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+    margin-left: 25px;
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 60px;
+    }
+
+    .logo img {
+        height: 30px;
+        margin-left: 15px;
+    }
+}
