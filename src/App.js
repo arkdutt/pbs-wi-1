@@ -3,8 +3,8 @@ import Header from './components/Header';
 import Location from './components/Location';
 import PopularPlaces from './components/PopularPlaces';
 import NeerPlaces from './components/NeerPlaces';
-import FloatingButton from './components/FloatingButton';
 import Nav from './components/Nav';
+import FloatingButton from './components/FloatingButton';
 
 function App() {
     return (
@@ -13,8 +13,8 @@ function App() {
             <Location />
             <PopularPlaces />
             <NeerPlaces />
-            <FloatingButton />
             <Nav />
+            <FloatingButton />
         </div>
     );
 }

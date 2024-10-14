@@ -8,6 +8,7 @@
     box-shadow: 0 0 10px var(--shadow);
     display: flex;
     overflow-x: auto;
+    background-color: white;
 }
 
 .nav-link {
