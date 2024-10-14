@@ -1,0 +1,17 @@
+.floating-btn {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    width: 80px;
+    background-color: var(--primary);
+    color: white;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 40px !important;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px var(--shadow);
+}
