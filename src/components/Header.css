@@ -1,29 +1,28 @@
+@font-face {
+    font-family: 'PBSSans';
+    src: url('../assets/fonts/PBSSans.ttf');
+}
+
 .header {
-    text-align: left;
-    padding: 30px;
-    color: #204553;
-}
-
-.header h1 {
-    font-size: 50px;
-    font-weight: normal;
-    line-height: 20px;
-    margin-bottom: 10px;
-}
-
-.location {
+    background-color: var(--primary);
+    height: 80px;
     display: flex;
-    text-align: left;
-    cursor: pointer;
-    margin-bottom: 40px;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.location span {
-    margin-left: 10px;
-    font-size: 18px;
+.logo img {
+    height: 30px;
+    margin-left: 25px;
 }
 
-.location img {
-    width: 24px;
-    height: 24px;
+@media (max-width: 480px) {
+    .header {
+        height: 60px;
+    }
+
+    .logo img {
+        height: 30px;
+        margin-left: 15px;
+    }
 }

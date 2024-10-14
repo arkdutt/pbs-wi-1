@@ -1,0 +1,29 @@
+.location {
+    text-align: left;
+    padding: 30px;
+    color: #204553;
+}
+
+.location h1 {
+    font-size: 50px;
+    font-weight: normal;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.find {
+    display: flex;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.find span {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.find img {
+    width: 24px;
+    height: 24px;
+}
