@@ -1,8 +1,8 @@
 import React from 'react';
-import './NeerPlaces.css';
+import './NearPlaces.css';
 import Card from './Card';
 
-function NeerPlaces() {
+function NearPlaces() {
     // Placeholder data
     const places = [
         { id: 1, name: 'Memorial Library', image: 'https://via.placeholder.com/150' },
@@ -13,8 +13,8 @@ function NeerPlaces() {
     ];
 
     return (
-        <div className="neer-places">
-            <h2><b>Neer</b> You</h2>
+        <div className="near-places">
+            <h2><b>Near</b> You</h2>
             <div className="cards-container">
                 {places.map(place => (
                     <Card key={place.id} name={place.name} image={place.image} />
@@ -24,4 +24,4 @@ function NeerPlaces() {
     );
 }
 
-export default NeerPlaces;
+export default NearPlaces;

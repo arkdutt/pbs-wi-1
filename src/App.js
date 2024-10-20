@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Location from './components/Location';
 import PopularPlaces from './components/PopularPlaces';
-import NeerPlaces from './components/NeerPlaces';
+import NearPlaces from './components/NearPlaces';
 import Nav from './components/Nav';
 import FloatingButton from './components/FloatingButton';
 
@@ -12,7 +12,7 @@ function App() {
             <Header />
             <Location />
             <PopularPlaces />
-            <NeerPlaces />
+            <NearPlaces />
             <Nav />
             <FloatingButton />
         </div>
