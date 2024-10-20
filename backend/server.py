@@ -23,12 +23,11 @@ locations = [
 # API to fetch location data based on the unique ID from the QR code
 @app.route('/api/location/<location_id>', methods=['GET'])
 def get_location(location_id):
-    # Find the location by its ID in the hardcoded data
     location = next((loc for loc in locations if loc["id"] == location_id), None)
     if location:
         return jsonify(location)  # Return the found location data
     else:
-        return jsonify({"error": "Location not found"}), 404  # Return 404 if not found
+        return jsonify({"error": "Location not found"}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
