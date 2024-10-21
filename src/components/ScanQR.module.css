@@ -1,0 +1,308 @@
+/* Main container to center the entire page content */
+.mainContainer {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    position: relative;
+    overflow: hidden; /* Hide overflowing content */
+    z-index: 1; /* Establish a base stacking context */
+
+}
+
+/* Box for scanning QR code */
+.Scan {
+    width: 412px;  /* Set width of the scanning box */
+    height: 915px; /* Set height of the scanning box */
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+    background-repeat: no-repeat;  /* Prevent background repetition */
+    z-index: 2; /* Make sure this container stays below the popup */
+
+}
+
+/* Invisible frame to guide the QR code scan area */
+.invisibleFrame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the frame */
+    width: 203px;
+    height: 203px;
+    pointer-events: none; /* Ignore mouse interactions */
+}
+
+/* Styling for L-shaped corners for QR scan area */
+.corner {
+    position: absolute;
+    width: 30px;  /* Width of L part */
+    height: 30px;  /* Height of L part */
+    border: 4px solid white;  /* White color for corner lines */
+    z-index: 3; /* Ensure corners stay below higher layers like the pop-up */
+
+}
+
+/* Top left corner */
+.corner.tl {
+    top: 0;
+    left: 0;
+    border-right: none; /* Remove right border to create L shape */
+    border-bottom: none; /* Remove bottom border to create L shape */
+}
+
+/* Top right corner */
+.corner.tr {
+    top: 0;
+    right: 0;
+    border-left: none; /* Remove left border */
+    border-bottom: none; /* Remove bottom border */
+}
+
+/* Bottom left corner */
+.corner.bl {
+    bottom: 0;
+    left: 0;
+    border-top: none; /* Remove top border */
+    border-right: none; /* Remove right border */
+}
+
+/* Bottom right corner */
+.corner.br {
+    bottom: 0;
+    right: 0;
+    border-top: none; /* Remove top border */
+    border-left: none; /* Remove left border */
+}
+
+/* Positioning the first InfoCircle.png */
+.infoCircle {
+    position: absolute;
+    top: calc(484px + 40px);  /* Adjust position */
+    left: calc(180px + 30px); /* Adjust position */
+    transform: translate(-50%, -50%);  /* Center the image */
+    width: auto;
+    height: auto;
+}
+
+/* Positioning the second InfoCircle.png */
+.infoCircleTwo {
+    position: absolute;
+    top: calc(392px + 40px);  /* Adjust position */
+    left: calc(214px + 30px); /* Adjust position */
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    cursor: pointer; /* Make it clickable */
+}
+
+/* Styling the camera button with icon and text */
+.cameraButton {
+    position: absolute;
+    bottom: 100px;  /* Position at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 10px 20px;
+    background-color: #ffffff; /* White background */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    color: rgb(0, 0, 0); /* Black text color */
+    font-family: "Gill Sans", sans-serif; /* Font style */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background change */
+    z-index: 2; /* Make sure button is above other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling for the box around the camera icon */
+.cameraIconBox {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;  /* Rounded corners for box */
+    background-color: #f0f0f0;  /* Light gray background */
+    border: 2px solid #cccccc;  /* Gray border for visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Space between icon box and text */
+}
+
+/* Styling for the camera icon inside the box */
+.cameraIcon {
+    width: 24px; /* Set width of the icon */
+    height: 24px; /* Set height of the icon */
+}
+
+/* Change button background on hover */
+.cameraButton:hover {
+    background-color: #DEEAF5; /* Light blue background on hover */
+}
+
+/* Pop-up overlay that covers the entire screen */
+.popupOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* High z-index to overlay everything */
+}
+
+/* Pop-up content inside the overlay */
+.popupContent {
+    width: 412px;
+    height: 915px;
+    background: white; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    position: relative;
+}
+
+/* Image inside the pop-up */
+.popupImage {
+    position: absolute;
+    top: 149px; /* Vertical position */
+    left: 51px; /* Horizontal position */
+    right: 50px; /* Right padding */
+    bottom: 539px; /* Bottom padding */
+    width: calc(100% - 101px); /* Keep padding consistent */
+    height: auto; /* Keep aspect ratio */
+}
+
+/* Styling for the "Bascom Hall" text inside pop-up */
+.bascomText {
+    position: absolute;
+    top: 330px;
+    left: 39px;
+    width: 315px;
+    height: 37px;
+    font-family: "Gill Sans", sans-serif; /* Font style */
+    font-weight: bold; /* Bold text */
+    font-size: 24px; /* Font size */
+    line-height: 40px;
+    text-align: center;
+    color: black; /* Black text */
+}
+
+/* Styling for the place icon inside pop-up */
+.placeIcon {
+    position: absolute;
+    top: 362px; /* Adjust vertical position */
+    left: 124px; 
+    width: 24px;
+    height: 24px;
+}
+
+/* Address text styling inside pop-up */
+.addressText {
+    position: absolute;
+    top: 362px; /* Align with place icon */
+    left: 154px; 
+    width: 113px; 
+    height: 24px;
+    font-family: "Gill Sans", sans-serif; 
+    font-size: 14px; 
+    line-height: 20px; 
+    color: #204553; /* Dark blue text color */
+    opacity: 0.6; /* Slightly transparent */
+    text-align: left;
+}
+
+/* Styling for the "1859" text */
+.yearText {
+    position: absolute;
+    top: 437px;
+    left: 144px;
+    width: 105px;
+    height: 31px;
+    font-family: "Gill Sans", sans-serif; /* Font style */
+    font-weight: bold; /* Bold text */
+    font-size: 22px; /* Font size */
+    color: #000; /* Black text */
+    text-align: center;
+}
+
+/* Styling for "Year Constructed" text */
+.yearConstructedText {
+    position: absolute;
+    top: 460px; /* Adjusted vertical position */
+    left: 148px;  
+    width: 101px;  
+    font-family: "Gill Sans", sans-serif;  
+    font-size: 12px;  
+    color: #000;  
+    opacity: 0.4;  /* More transparent */
+    text-align: center;
+}
+
+/* Description text inside the pop-up */
+.descriptionText {
+    position: absolute;
+    top: 515px;  /* Adjusted vertical position */
+    left: 42px;  
+    width: 312px; 
+    font-family: "Gill Sans", sans-serif;  
+    font-size: 14px;  
+    color: #000;  
+    text-align: left;
+    line-height: 1.5;  /* Improved readability */
+}
+
+/* "More information" button inside the pop-up */
+.moreInfoButton {
+    position: absolute;
+    top: 723px;
+    left: 107px;
+    width: 179px;
+    height: 70px;
+    background-color: #030303; /* Dark background */
+    color: white; /* White text */
+    font-family: "Gill Sans", sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px; /* Rounded button */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+.moreInfoButton:hover {
+    background-color: #202020; /* Darker color on hover */
+}
+
+/* Back Button styling */
+.backButton {
+    position: absolute;
+    top: 55px;  /* Vertical position */
+    left: 39px;  /* Horizontal position */
+    width: 50px;  /* Button width */
+    height: 60px;  /* Button height */
+    background-color: #ffffff;  /* White background */
+    border: 2px solid #DEEAF5;  /* Border color */
+    border-radius: 20px;  /* Rounded corners */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border 0.3s ease; /* Smooth transition */
+    z-index: 10000;  /* Keep on top */
+}
+
+.backButton:hover {
+    background-color: #e0e0e0;  /* Light gray on hover */
+}
+
+/* Back icon inside the button */
+.backIcon {
+    width: 13px;  /* Icon width */
+    height: 13px;  /* Icon height */
+    object-fit: contain;  /* Ensure icon fits well */
+}
