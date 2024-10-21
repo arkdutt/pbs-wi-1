@@ -15,8 +15,8 @@
 
 /* Box for scanning QR code */
 .Scan {
-    width: 412px;  /* Set width of the scanning box */
-    height: 915px; /* Set height of the scanning box */
+    width: 400px;  /* Set width of the scanning box 412*/
+    height: 915px; /* Set height of the scanning box 936.5*/
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a light shadow */
     background-repeat: no-repeat;  /* Prevent background repetition */
@@ -159,7 +159,7 @@
 
 /* Pop-up content inside the overlay */
 .popupContent {
-    width: 412px;
+    width: 400px;
     height: 915px;
     background: white; /* White background */
     border-radius: 8px; /* Rounded corners */

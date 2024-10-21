@@ -178,16 +178,17 @@ import jsQR from 'jsqr';  // Library for QR code scanning
 import axios from 'axios';  // Used for making API requests
 import styles from './ScanQR.module.css';
 
-<<<<<<< HEAD
+
+
 import BackIcon from '../assets/icons/Back_Icon.png';
 import CameraIcon from '../assets/icons/Camera_Icon.png';
 import InfoCircleIcon from '../assets/icons/InfoCircle.png';
 import PlaceIcon from '../assets/icons/Place_Icon.png';
 import BascomHallPlaceholder from '../assets/thumbnails/Bascom_Placeholder.png';
 import BascomHallFullPicture from '../assets/thumbnails/Bascom_Full_Picture.png';
+import CapitolFullPicture from '../assets/thumbnails/Capitol_Full_Picture.jpg';
+import MemorialUnionFullPicture from '../assets/thumbnails/MemorialUnion_Full_Picture.jpg';
 
-=======
->>>>>>> origin/scrum-54
 const ScanQRPage = () => {
     const [cameraActive, setCameraActive] = useState(false); // Track if camera is active
     const [popupActive, setPopupActive] = useState(false); // Track if pop-up is active
@@ -349,13 +350,14 @@ const ScanQRPage = () => {
             {popupActive && locationData && (
                 <div className={styles.popupOverlay}>
                     <div className={styles.popupContent}>
+                        {/* Use dynamic image URL from locationData */}
                         <img
-                            src={BascomHallFullPicture}
-                            alt="Bascom Full Pic"
+                            src={locationData.imageUrl} // Fetch image URL from locationData
+                            alt={`${locationData.name} Picture`}
                             className={styles.popupImage}
                         />
                         <div className={styles.bascomText}>
-                            {locationData.name}
+                            {locationData.name} // Use dynamic name
                         </div>
                         <img
                             src={PlaceIcon}
@@ -363,17 +365,16 @@ const ScanQRPage = () => {
                             className={styles.placeIcon}
                         />
                         <div className={styles.addressText}>
-                            1872 Lincoln Dr {/* Placeholder for address */}
+                            {locationData.address}  // Use dynamic address
                         </div>
                         <div className={styles.yearText}>
-                            {/* Example Year - you can replace this with a field from location data */}
-                            1859
+                            {locationData.yearConstructed} // Use dynamic year constructed
                         </div>
                         <div className={styles.yearConstructedText}>
                             Year Constructed
                         </div>
                         <div className={styles.descriptionText}>
-                            {locationData.history}
+                            {locationData.history}  // Use dynamic history description
                         </div>
                         <button className={styles.moreInfoButton}>
                             More information
