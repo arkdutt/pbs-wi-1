@@ -186,8 +186,8 @@ import InfoCircleIcon from '../assets/icons/InfoCircle.png';
 import PlaceIcon from '../assets/icons/Place_Icon.png';
 import BascomHallPlaceholder from '../assets/thumbnails/Bascom_Placeholder.png';
 import BascomHallFullPicture from '../assets/thumbnails/Bascom_Full_Picture.png';
-import CapitolFullPicture from '../assets/thumbnails/Capitol_Full_Picture.jpg';
-import MemorialUnionFullPicture from '../assets/thumbnails/MemorialUnion_Full_Picture.jpg';
+import CapitolFullPicture from '../assets/thumbnails/Capitol_Full_Picture.png';
+import MemorialUnionFullPicture from '../assets/thumbnails/MemorialUnion_Full_Picture.png';
 
 const ScanQRPage = () => {
     const [cameraActive, setCameraActive] = useState(false); // Track if camera is active
@@ -196,6 +196,12 @@ const ScanQRPage = () => {
     const [locationData, setLocationData] = useState(null); // Store fetched location data
     const videoRef = useRef(null); // Reference to the video element
     const canvasRef = useRef(null); // Reference to the canvas element
+
+    const imageMapping = {
+        BascomHallFullPicture: BascomHallFullPicture,
+        MemorialUnionFullPicture: MemorialUnionFullPicture,
+        CapitolFullPicture: CapitolFullPicture
+    };
 
     // Start the camera
     const startCamera = () => {
@@ -352,12 +358,12 @@ const ScanQRPage = () => {
                     <div className={styles.popupContent}>
                         {/* Use dynamic image URL from locationData */}
                         <img
-                            src={locationData.imageUrl} // Fetch image URL from locationData
+                            src={imageMapping[locationData.image]} // Fetch image URL from locationData
                             alt={`${locationData.name} Picture`}
                             className={styles.popupImage}
                         />
                         <div className={styles.bascomText}>
-                            {locationData.name} // Use dynamic name
+                            {locationData.name}
                         </div>
                         <img
                             src={PlaceIcon}
@@ -365,16 +371,16 @@ const ScanQRPage = () => {
                             className={styles.placeIcon}
                         />
                         <div className={styles.addressText}>
-                            {locationData.address}  // Use dynamic address
+                            {locationData.address}
                         </div>
                         <div className={styles.yearText}>
-                            {locationData.yearConstructed} // Use dynamic year constructed
+                            {locationData.yearConstructed}
                         </div>
                         <div className={styles.yearConstructedText}>
                             Year Constructed
                         </div>
                         <div className={styles.descriptionText}>
-                            {locationData.history}  // Use dynamic history description
+                            {locationData.history}
                         </div>
                         <button className={styles.moreInfoButton}>
                             More information
