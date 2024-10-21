@@ -1,5 +1,5 @@
-Forward Rewind AR Web App
-Welcome to the Forward Rewind AR Web App repository! This project is an immersive and interactive web application developed in collaboration with PBS Wisconsin. The app serves as a virtual tour guide, offering an augmented reality (AR) experience that allows users to explore historical locations and events in an engaging and educational way.
+Forward Rewind AR Web App 
+\nWelcome to the Forward Rewind AR Web App repository! This project is an immersive and interactive web application developed in collaboration with PBS Wisconsin. The app serves as a virtual tour guide, offering an augmented reality (AR) experience that allows users to explore historical locations and events in an engaging and educational way.
 
 Table of Contents
 - About the Project
