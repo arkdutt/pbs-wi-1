@@ -9,7 +9,7 @@
 
 body {
     margin: 0;
-    font-family: calibri;
+    font-family: 'Calibri';
 }
 
 .App {
@@ -22,4 +22,9 @@ body {
 @font-face {
     font-family: 'PBSSans';
     src: url('../assets/fonts/PBSSans.ttf');
+}
+
+@font-face {
+    font-family: 'Calibri';
+    src: url('../assets/fonts/calibri.ttf');
 }
