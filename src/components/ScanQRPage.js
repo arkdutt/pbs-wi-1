@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Webcam from 'webcam-easy';
-import styles from '../../styles/ScanQR.module.css';
+import styles from './ScanQR.module.css';
+
 
 const ScanQRPage = () => {
     const [cameraActive, setCameraActive] = useState(false); // Track if camera is active
