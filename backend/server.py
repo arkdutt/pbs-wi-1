@@ -1,6 +1,12 @@
 from flask import Flask, jsonify
+from flask_cors import CORS  # Import CORS
 
 app = Flask(__name__)
+CORS(app, resources={r'/api/*': {'origins': 'http://localhost:3000'}})  # Enable CORS for all routes
+#, origins=['http://localhost:3000/scanqr']
+
+# app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 locations = [
     {
@@ -25,7 +31,7 @@ locations = [
 def get_location(location_id):
     location = next((loc for loc in locations if loc["id"] == location_id), None)
     if location:
-        return jsonify(location)  # Return the found location data
+        return jsonify(location)
     else:
         return jsonify({"error": "Location not found"}), 404
 

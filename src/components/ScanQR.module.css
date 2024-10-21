@@ -259,8 +259,9 @@
 /* "More information" button inside the pop-up */
 .moreInfoButton {
     position: absolute;
-    top: 723px;
-    left: 107px;
+    bottom: 40px; /* Position it near the bottom */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%);
     width: 179px;
     height: 70px;
     background-color: #030303; /* Dark background */
