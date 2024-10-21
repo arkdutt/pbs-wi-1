@@ -4,6 +4,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import Webcam from 'webcam-easy';
 import styles from './ScanQR.module.css';
 
+import BackIcon from '../assets/icons/Back_Icon.png';
+import CameraIcon from '../assets/icons/Camera_Icon.png';
+import InfoCircleIcon from '../assets/icons/InfoCircle.png';
+import PlaceIcon from '../assets/icons/Place_Icon.png';
+import BascomHallPlaceholder from '../assets/thumbnails/Bascom_Placeholder.png';
+import BascomHallFullPicture from '../assets/thumbnails/Bascom_Full_Picture.png';
 
 const ScanQRPage = () => {
     const [cameraActive, setCameraActive] = useState(false); // Track if camera is active
@@ -50,7 +56,7 @@ const ScanQRPage = () => {
             <div
                 className={styles.Scan}
                 style={{
-                    backgroundImage: !cameraActive ? `url(/Bascom_Placeholder.png)` : 'none',
+                    backgroundImage: !cameraActive ? `url(${BascomHallPlaceholder})` : 'none',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
@@ -99,12 +105,12 @@ const ScanQRPage = () => {
                 {!cameraActive && (
                     <>
                         <img
-                            src="/InfoCircle.png"
+                            src={InfoCircleIcon}
                             alt="Info Circle 1"
                             className={styles.infoCircle}
                         />
                         <img
-                            src="/InfoCircle.png"
+                            src={InfoCircleIcon}
                             alt="Info Circle 2"
                             className={styles.infoCircleTwo}
                             onClick={togglePopup}
@@ -117,7 +123,7 @@ const ScanQRPage = () => {
                 {!cameraActive && (
                     <button onClick={startCamera} className={styles.cameraButton}>
                         <div className={styles.cameraIconBox}>
-                            <img src="/Camera_Icon.png" alt="Camera Icon" className={styles.cameraIcon} />
+                            <img src={CameraIcon} alt="Camera Icon" className={styles.cameraIcon} />
                         </div>
                         Start Scanner
                     </button>
@@ -129,7 +135,7 @@ const ScanQRPage = () => {
                 <div className={styles.popupOverlay}>
                     <div className={styles.popupContent}>
                         <img
-                            src="/Bascom_Full_Pic.png"
+                            src={BascomHallFullPicture}
                             alt="Bascom Full Pic"
                             className={styles.popupImage}
                         />
@@ -137,7 +143,7 @@ const ScanQRPage = () => {
                             Bascom Hall
                         </div>
                         <img
-                            src="/Place_Icon.png"
+                            src={PlaceIcon}
                             alt="Place Icon"
                             className={styles.placeIcon}
                         />
@@ -159,7 +165,7 @@ const ScanQRPage = () => {
 
                         {/* Back Button with Back Icon */}
                         <button onClick={togglePopup} className={styles.backButton}>
-                            <img src="/Back_Icon.png" alt="Back Icon" className={styles.backIcon} />
+                            <img src={BackIcon} alt="Back Icon" className={styles.backIcon} />
                         </button>
                     </div>
                 </div>

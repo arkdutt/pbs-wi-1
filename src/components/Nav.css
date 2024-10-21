@@ -4,6 +4,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    max-width: 500px;
     height: 55px;
     box-shadow: 0 0 10px var(--shadow);
     display: flex;
