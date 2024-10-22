@@ -178,12 +178,16 @@ import jsQR from 'jsqr';  // Library for QR code scanning
 import axios from 'axios';  // Used for making API requests
 import styles from './ScanQR.module.css';
 
+
+
 import BackIcon from '../assets/icons/Back_Icon.png';
 import CameraIcon from '../assets/icons/Camera_Icon.png';
 import InfoCircleIcon from '../assets/icons/InfoCircle.png';
 import PlaceIcon from '../assets/icons/Place_Icon.png';
 import BascomHallPlaceholder from '../assets/thumbnails/Bascom_Placeholder.png';
 import BascomHallFullPicture from '../assets/thumbnails/Bascom_Full_Picture.png';
+import CapitolFullPicture from '../assets/thumbnails/Capitol_Full_Picture.png';
+import MemorialUnionFullPicture from '../assets/thumbnails/MemorialUnion_Full_Picture.png';
 
 const ScanQRPage = () => {
     const [cameraActive, setCameraActive] = useState(false); // Track if camera is active
@@ -192,6 +196,12 @@ const ScanQRPage = () => {
     const [locationData, setLocationData] = useState(null); // Store fetched location data
     const videoRef = useRef(null); // Reference to the video element
     const canvasRef = useRef(null); // Reference to the canvas element
+
+    const imageMapping = {
+        BascomHallFullPicture: BascomHallFullPicture,
+        MemorialUnionFullPicture: MemorialUnionFullPicture,
+        CapitolFullPicture: CapitolFullPicture
+    };
 
     // Start the camera
     const startCamera = () => {
@@ -346,9 +356,10 @@ const ScanQRPage = () => {
             {popupActive && locationData && (
                 <div className={styles.popupOverlay}>
                     <div className={styles.popupContent}>
+                        {/* Use dynamic image URL from locationData */}
                         <img
-                            src={BascomHallFullPicture}
-                            alt="Bascom Full Pic"
+                            src={imageMapping[locationData.image]} // Fetch image URL from locationData
+                            alt={`${locationData.name} Picture`}
                             className={styles.popupImage}
                         />
                         <div className={styles.bascomText}>
@@ -360,11 +371,18 @@ const ScanQRPage = () => {
                             className={styles.placeIcon}
                         />
                         <div className={styles.addressText}>
+<<<<<<< HEAD
                             1872 Lincoln Dr {/* Placeholder for address */}
                         </div>
                         <div className={styles.yearText}>
                             {/* Example Year - you can replace this with a field from location data */}
                             1859
+=======
+                            {locationData.address}
+                        </div>
+                        <div className={styles.yearText}>
+                            {locationData.yearConstructed}
+>>>>>>> qr+info
                         </div>
                         <div className={styles.yearConstructedText}>
                             Year Constructed
