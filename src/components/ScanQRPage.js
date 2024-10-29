@@ -371,18 +371,10 @@ const ScanQRPage = () => {
                             className={styles.placeIcon}
                         />
                         <div className={styles.addressText}>
-<<<<<<< HEAD
-                            1872 Lincoln Dr {/* Placeholder for address */}
-                        </div>
-                        <div className={styles.yearText}>
-                            {/* Example Year - you can replace this with a field from location data */}
-                            1859
-=======
                             {locationData.address}
                         </div>
                         <div className={styles.yearText}>
                             {locationData.yearConstructed}
->>>>>>> qr+info
                         </div>
                         <div className={styles.yearConstructedText}>
                             Year Constructed
