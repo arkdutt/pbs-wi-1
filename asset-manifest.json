@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/pbs-wi-1/static/css/main.50428858.css",
+    "main.js": "/pbs-wi-1/static/js/main.353d8feb.js",
+    "static/media/calibri.ttf": "/pbs-wi-1/static/media/calibri.29c57b05b7345f94042a.ttf",
+    "static/media/Bascom_Placeholder.png": "/pbs-wi-1/static/media/Bascom_Placeholder.bde90548b07269736f5e.png",
+    "static/media/MemorialUnion_Full_Picture.png": "/pbs-wi-1/static/media/MemorialUnion_Full_Picture.ab1938494a1c39899f64.png",
+    "static/media/Bascom_Full_Picture.png": "/pbs-wi-1/static/media/Bascom_Full_Picture.30c1ae4b4b2901fced55.png",
+    "static/media/Capitol_Full_Picture.png": "/pbs-wi-1/static/media/Capitol_Full_Picture.f8952b8803f36ffd2b67.png",
+    "static/media/gps-icon.png": "/pbs-wi-1/static/media/gps-icon.9efbca75012556c4bc96.png",
+    "static/media/PBSSans.ttf": "/pbs-wi-1/static/media/PBSSans.85686cc299cd29cc48be.ttf",
+    "static/media/Capitol150x150.png": "/pbs-wi-1/static/media/Capitol150x150.c15f92d11031becbfcc5.png",
+    "static/media/MemorialUnion150x150.png": "/pbs-wi-1/static/media/MemorialUnion150x150.72e8640d064e9e550889.png",
+    "static/media/Bascom150x150.png": "/pbs-wi-1/static/media/Bascom150x150.d294957415bbb7f8dd0b.png",
+    "static/media/pbs-wisconsin-wblue-rgb.png": "/pbs-wi-1/static/media/pbs-wisconsin-wblue-rgb.47616512812bbbed6162.png",
+    "index.html": "/pbs-wi-1/index.html",
+    "main.50428858.css.map": "/pbs-wi-1/static/css/main.50428858.css.map",
+    "main.353d8feb.js.map": "/pbs-wi-1/static/js/main.353d8feb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50428858.css",
+    "static/js/main.353d8feb.js"
+  ]
+}
