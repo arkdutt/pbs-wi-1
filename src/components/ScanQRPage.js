@@ -362,7 +362,7 @@ const ScanQRPage = () => {
         {/* Button to switch camera when the camera is active */}
         {cameraActive && (
           <button onClick={switchCamera} className={styles.switchCameraButton}>
-            <img src={CameraIcon} alt="Switch Camera" className={styles.CameraIcon} />
+            <img src={CameraIcon} alt="Switch Camera" className={styles.switchCameraIcon} />
           </button>
         )}
             </div>
