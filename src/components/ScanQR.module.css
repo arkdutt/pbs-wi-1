@@ -145,13 +145,13 @@
 
 .switchCameraButton {
     position: absolute;
-    top: 50%;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 99999;
+    z-index: 10005;
   }
   
   .switchCameraIcon {

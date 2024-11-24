@@ -317,6 +317,7 @@ const ScanQRPage = () => {
                             objectFit: 'cover',
                             display: cameraActive ? 'block' : 'none',
                             zIndex: cameraActive ? 10001 : 'auto',
+                            transform: facingMode === 'user' ? 'scaleX(-1)' : 'none',
                         }}
                     ></video>
                 </div>
