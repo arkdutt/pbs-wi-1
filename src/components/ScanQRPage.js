@@ -194,6 +194,7 @@ const ScanQRPage = () => {
     const [popupActive, setPopupActive] = useState(false); // Track if pop-up is active
     const [webcam, setWebcam] = useState(null); // Store webcam instance
     const [locationData, setLocationData] = useState(null); // Store fetched location data
+    const [facingMode, setFacingMode] = useState('environment'); // State variable for facing mode
     const videoRef = useRef(null); // Reference to the video element
     const canvasRef = useRef(null); // Reference to the canvas element
 
@@ -204,19 +205,26 @@ const ScanQRPage = () => {
     };
 
     // Start the camera
-    const startCamera = () => {
-        if (!webcam) {
-            const webcamInstance = new Webcam(videoRef.current, 'user', canvasRef.current);
-            webcamInstance.start()
-                .then(() => {
-                    setCameraActive(true);
-                    setWebcam(webcamInstance);
-                })
-                .catch(err => {
-                    console.error("Error starting webcam: ", err);
-                });
+    const startCamera = (facingModeParam = 'environment') => {
+        if (webcam) {
+          webcam.stop();
         }
-    };
+        const webcamInstance = new Webcam(videoRef.current, facingModeParam, canvasRef.current);
+        webcamInstance.start()
+          .then(() => {
+            setCameraActive(true);
+            setWebcam(webcamInstance);
+          })
+          .catch(err => {
+            console.error("Error starting webcam: ", err);
+          });
+      };
+
+    const switchCamera = () => {
+        const newFacingMode = facingMode === 'user' ? 'environment' : 'user';
+        setFacingMode(newFacingMode);
+        startCamera(newFacingMode);
+      };
 
     // Function to scan the QR code from the camera feed
     const scanQRCode = () => {
@@ -343,13 +351,20 @@ const ScanQRPage = () => {
 
                 {/* Button to start the camera */}
                 {!cameraActive && (
-                    <button onClick={startCamera} className={styles.cameraButton}>
-                        <div className={styles.cameraIconBox}>
-                            <img src={CameraIcon} alt="Camera Icon" className={styles.cameraIcon} />
-                        </div>
-                        Start Scanner
-                    </button>
-                )}
+          <button onClick={() => startCamera(facingMode)} className={styles.cameraButton}>
+            <div className={styles.cameraIconBox}>
+              <img src={CameraIcon} alt="Camera Icon" className={styles.cameraIcon} />
+            </div>
+            Start Scanner
+          </button>
+        )}
+
+        {/* Button to switch camera when the camera is active */}
+        {cameraActive && (
+          <button onClick={switchCamera} className={styles.switchCameraButton}>
+            <img src={CameraIcon} alt="Switch Camera" className={styles.CameraIcon} />
+          </button>
+        )}
             </div>
 
             {/* Pop-up overlay with information */}
