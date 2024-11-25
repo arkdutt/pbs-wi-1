@@ -7,7 +7,7 @@ function FloatingButton() {
 
     const handleClick = (e) => {
         e.preventDefault(); // Prevent default anchor behavior
-        navigate('/scanqr'); // Navigate to ScanQRPage
+        navigate('/ar'); // Navigate to ScanQRPage
     };
 
     return (

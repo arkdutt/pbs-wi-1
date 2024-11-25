@@ -7,7 +7,7 @@ import NearPlaces from './components/NearPlaces';
 import Nav from './components/Nav';
 import FloatingButton from './components/FloatingButton';
 import ScanQRPage from './components/ScanQRPage'; // Import ScanQRPage
-
+import ARScene from './components/ARScene';
 
 function App() {
     return (
@@ -29,7 +29,7 @@ function App() {
                         } 
                     />
                     {/* ScanQR Page Route */}
-                    <Route path="/scanqr" element={<ScanQRPage />} />
+                    <Route path="/ar" element={<ARScene />} />
                 </Routes>
             </div>
         </Router>

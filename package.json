@@ -7,13 +7,16 @@
     "start": "react-scripts start"
   },
   "dependencies": {
+    "aframe": "^1.6.0",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "jsqr": "^1.4.0",
+    "mind-ar": "^1.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
+    "three": "^0.170.0",
     "webcam-easy": "^1.1.1"
   },
   "author": "",
@@ -29,5 +32,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
   }
 }
