@@ -369,17 +369,16 @@ const ScanQRPage = () => {
             </div>
 
             {/* Pop-up overlay with information */}
-            {popupActive && locationData && (
+            {popupActive && (
                 <div className={styles.popupOverlay}>
                     <div className={styles.popupContent}>
-                        {/* Use dynamic image URL from locationData */}
                         <img
-                            src={imageMapping[locationData.image]} // Fetch image URL from locationData
-                            alt={`${locationData.name} Picture`}
+                            src={BascomHallFullPicture}
+                            alt="Bascom Full Pic"
                             className={styles.popupImage}
                         />
                         <div className={styles.bascomText}>
-                            {locationData.name}
+                            Bascom Hall
                         </div>
                         <img
                             src={PlaceIcon}
@@ -387,16 +386,16 @@ const ScanQRPage = () => {
                             className={styles.placeIcon}
                         />
                         <div className={styles.addressText}>
-                            {locationData.address}
+                            1872 Lincoln Dr
                         </div>
                         <div className={styles.yearText}>
-                            {locationData.yearConstructed}
+                            1859
                         </div>
                         <div className={styles.yearConstructedText}>
                             Year Constructed
                         </div>
                         <div className={styles.descriptionText}>
-                            {locationData.history}
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.
                         </div>
                         <button className={styles.moreInfoButton}>
                             More information
@@ -505,6 +504,50 @@ const ScanQRPage = () => {
     //         )}
     //     </div>
     // );
+
+    
+    //    {/* Pop-up overlay with information */}
+    //    {popupActive && locationData && (
+    //        <div className={styles.popupOverlay}>
+    //            <div className={styles.popupContent}>
+    //                {/* Use dynamic image URL from locationData */}
+    //                <img
+    //                    src={imageMapping[locationData.image]} // Fetch image URL from locationData
+    //                    alt={`${locationData.name} Picture`}
+    //                    className={styles.popupImage}
+    //                />
+    //                <div className={styles.bascomText}>
+    //                    {locationData.name}
+    //                </div>
+    //                <img
+    //                    src={PlaceIcon}
+    //                    alt="Place Icon"
+    //                    className={styles.placeIcon}
+    //                />
+    //                <div className={styles.addressText}>
+    //                    {locationData.address}
+    //                </div>
+    //                <div className={styles.yearText}>
+    //                    {locationData.yearConstructed}
+    //                </div>
+    //                <div className={styles.yearConstructedText}>
+    //                    Year Constructed
+    //                </div>
+    //                <div className={styles.descriptionText}>
+    //                    {locationData.history}
+    //                </div>
+    //                <button className={styles.moreInfoButton}>
+    //                    More information
+    //                </button>
+    //
+    //                {/* Back Button with Back Icon */}
+    //                <button onClick={togglePopup} className={styles.backButton}>
+    //                    <img src={BackIcon} alt="Back Icon" className={styles.backIcon} />
+    //                </button>
+    //            </div>
+    //        </div>
+    //    )}
+    // };
 };
 
 export default ScanQRPage;
