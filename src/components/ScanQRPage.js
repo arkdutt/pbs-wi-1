@@ -182,6 +182,7 @@ import styles from './ScanQR.module.css';
 
 import BackIcon from '../assets/icons/Back_Icon.png';
 import CameraIcon from '../assets/icons/Camera_Icon.png';
+import FlipIcon from '../assets/icons/Flip_Icon.png';
 import InfoCircleIcon from '../assets/icons/InfoCircle.png';
 import PlaceIcon from '../assets/icons/Place_Icon.png';
 import BascomHallPlaceholder from '../assets/thumbnails/Bascom_Placeholder.png';
@@ -195,6 +196,7 @@ const ScanQRPage = () => {
     const [webcam, setWebcam] = useState(null); // Store webcam instance
     const [locationData, setLocationData] = useState(null); // Store fetched location data
     const [facingMode, setFacingMode] = useState('environment'); // State variable for facing mode
+    const [cameraError, setCameraError] = useState(false); // State variable for camera errors
     const videoRef = useRef(null); // Reference to the video element
     const canvasRef = useRef(null); // Reference to the canvas element
 
@@ -203,6 +205,11 @@ const ScanQRPage = () => {
         MemorialUnionFullPicture: MemorialUnionFullPicture,
         CapitolFullPicture: CapitolFullPicture
     };
+
+    // Start the camera when the component mounts
+    useEffect(() => {
+        startCamera(facingMode);
+    }, []);
 
     // Start the camera
     const startCamera = (facingModeParam = 'environment') => {
@@ -214,9 +221,12 @@ const ScanQRPage = () => {
             .then(() => {
                 setCameraActive(true);
                 setWebcam(webcamInstance);
+                setCameraError(false); // Reset camera error state
             })
             .catch(err => {
                 console.error("Error starting webcam: ", err);
+                setCameraActive(false);
+                setCameraError(true); // Set camera error state
             });
     };
 
@@ -350,20 +360,10 @@ const ScanQRPage = () => {
                     </>
                 )}
 
-                {/* Button to start the camera */}
-                {!cameraActive && (
-                    <button onClick={() => startCamera(facingMode)} className={styles.cameraButton}>
-                        <div className={styles.cameraIconBox}>
-                            <img src={CameraIcon} alt="Camera Icon" className={styles.cameraIcon} />
-                        </div>
-                        Start Scanner
-                    </button>
-                )}
-
                 {/* Button to switch camera when the camera is active */}
                 {cameraActive && (
                     <button onClick={switchCamera} className={styles.switchCameraButton}>
-                        <img src={CameraIcon} alt="Switch Camera" className={styles.switchCameraIcon} />
+                        <img src={FlipIcon} alt="Switch Camera" className={styles.switchCameraIcon} />
                     </button>
                 )}
             </div>
