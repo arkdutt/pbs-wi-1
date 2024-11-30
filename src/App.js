@@ -7,6 +7,8 @@ import NearPlaces from './components/NearPlaces';
 import Nav from './components/Nav';
 import FloatingButton from './components/FloatingButton';
 import ScanQRPage from './components/ScanQRPage'; // Import ScanQRPage
+import ARScene from './components/ARScene'; // Import the ARScene component
+
 
 
 function App() {
@@ -29,8 +31,16 @@ function App() {
                         } 
                     />
                     {/* ScanQR Page Route */}
-                    <Route path="/scanqr" element={<ScanQRPage />} />
-                </Routes>
+                    {/* <Route path="/scanqr" element={<ScanQRPage />} /> */}
+
+
+                    {/* ARScene Page Route */}
+                    {/* <Route 
+                        path="/ar" 
+                        element={() => window.location.href = "/mindar.html"} 
+                    />
+                </Routes> */}
+                <Route path="/arscene" element={<ARScene />} /></Routes>
             </div>
         </Router>
     );
