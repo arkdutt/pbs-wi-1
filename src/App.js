@@ -6,7 +6,8 @@ import PopularPlaces from './components/PopularPlaces';
 import NearPlaces from './components/NearPlaces';
 import Nav from './components/Nav';
 import FloatingButton from './components/FloatingButton';
-import ScanQRPage from './components/ScanQRPage'; // Import ScanQRPage
+// import ScanQRPage from './components/ScanQRPage'; // Import ScanQRPage
+import MindARViewer from './components/MindARViewer';
 
 
 function App() {
@@ -26,10 +27,10 @@ function App() {
                                 <Nav />
                                 <FloatingButton />
                             </>
-                        } 
+                        }
                     />
                     {/* ScanQR Page Route */}
-                    <Route path="/scanqr" element={<ScanQRPage />} />
+                    {/* <Route path="/ar" element={<div>AR Viewer Placeholder</div>} /> */}
                 </Routes>
             </div>
         </Router>
