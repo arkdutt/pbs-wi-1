@@ -69,10 +69,10 @@ function App() {
         </>
       ) : (
         <div className="container">
-          <MindARViewer />
           <button className="stop-button" onClick={handleStop}>
             Stop AR
           </button>
+          <MindARViewer />
         </div>
       )}
     </div>
