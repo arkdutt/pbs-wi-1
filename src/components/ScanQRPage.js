@@ -182,6 +182,7 @@ import styles from './ScanQR.module.css';
 
 import BackIcon from '../assets/icons/Back_Icon.png';
 import CameraIcon from '../assets/icons/Camera_Icon.png';
+import FlipIcon from '../assets/icons/Flip_Icon.png';
 import InfoCircleIcon from '../assets/icons/InfoCircle.png';
 import PlaceIcon from '../assets/icons/Place_Icon.png';
 import BascomHallPlaceholder from '../assets/thumbnails/Bascom_Placeholder.png';
@@ -194,6 +195,8 @@ const ScanQRPage = () => {
     const [popupActive, setPopupActive] = useState(false); // Track if pop-up is active
     const [webcam, setWebcam] = useState(null); // Store webcam instance
     const [locationData, setLocationData] = useState(null); // Store fetched location data
+    const [facingMode, setFacingMode] = useState('environment'); // State variable for facing mode
+    const [cameraError, setCameraError] = useState(false); // State variable for camera errors
     const videoRef = useRef(null); // Reference to the video element
     const canvasRef = useRef(null); // Reference to the canvas element
 
@@ -203,19 +206,34 @@ const ScanQRPage = () => {
         CapitolFullPicture: CapitolFullPicture
     };
 
+    // Start the camera when the component mounts
+    useEffect(() => {
+        startCamera(facingMode);
+    }, []);
+
     // Start the camera
-    const startCamera = () => {
-        if (!webcam) {
-            const webcamInstance = new Webcam(videoRef.current, 'user', canvasRef.current);
-            webcamInstance.start()
-                .then(() => {
-                    setCameraActive(true);
-                    setWebcam(webcamInstance);
-                })
-                .catch(err => {
-                    console.error("Error starting webcam: ", err);
-                });
+    const startCamera = (facingModeParam = 'environment') => {
+        if (webcam) {
+            webcam.stop();
         }
+        const webcamInstance = new Webcam(videoRef.current, facingModeParam, canvasRef.current);
+        webcamInstance.start()
+            .then(() => {
+                setCameraActive(true);
+                setWebcam(webcamInstance);
+                setCameraError(false); // Reset camera error state
+            })
+            .catch(err => {
+                console.error("Error starting webcam: ", err);
+                setCameraActive(false);
+                setCameraError(true); // Set camera error state
+            });
+    };
+
+    const switchCamera = () => {
+        const newFacingMode = facingMode === 'user' ? 'environment' : 'user';
+        setFacingMode(newFacingMode);
+        startCamera(newFacingMode);
     };
 
     // Function to scan the QR code from the camera feed
@@ -341,29 +359,25 @@ const ScanQRPage = () => {
                     </>
                 )}
 
-                {/* Button to start the camera */}
-                {!cameraActive && (
-                    <button onClick={startCamera} className={styles.cameraButton}>
-                        <div className={styles.cameraIconBox}>
-                            <img src={CameraIcon} alt="Camera Icon" className={styles.cameraIcon} />
-                        </div>
-                        Start Scanner
+                {/* Button to switch camera when the camera is active */}
+                {cameraActive && (
+                    <button onClick={switchCamera} className={styles.switchCameraButton}>
+                        <img src={FlipIcon} alt="Switch Camera" className={styles.switchCameraIcon} />
                     </button>
                 )}
             </div>
 
             {/* Pop-up overlay with information */}
-            {popupActive && locationData && (
+            {popupActive && (
                 <div className={styles.popupOverlay}>
                     <div className={styles.popupContent}>
-                        {/* Use dynamic image URL from locationData */}
                         <img
-                            src={imageMapping[locationData.image]} // Fetch image URL from locationData
-                            alt={`${locationData.name} Picture`}
+                            src={BascomHallFullPicture}
+                            alt="Bascom Full Pic"
                             className={styles.popupImage}
                         />
                         <div className={styles.bascomText}>
-                            {locationData.name}
+                            Bascom Hall
                         </div>
                         <img
                             src={PlaceIcon}
@@ -371,16 +385,16 @@ const ScanQRPage = () => {
                             className={styles.placeIcon}
                         />
                         <div className={styles.addressText}>
-                            {locationData.address}
+                            1872 Lincoln Dr
                         </div>
                         <div className={styles.yearText}>
-                            {locationData.yearConstructed}
+                            1859
                         </div>
                         <div className={styles.yearConstructedText}>
                             Year Constructed
                         </div>
                         <div className={styles.descriptionText}>
-                            {locationData.history}
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.
                         </div>
                         <button className={styles.moreInfoButton}>
                             More information

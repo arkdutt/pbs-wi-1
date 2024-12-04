@@ -1,0 +1,165 @@
+/* Pop-up overlay that covers the entire screen */
+.popupOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* High z-index to overlay everything */
+}
+
+/* Pop-up content inside the overlay */
+.popupContent {
+    width: 400px;
+    height: 915px;
+    background: white; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    position: relative;
+}
+
+/* Image inside the pop-up */
+.popupImage {
+    position: absolute;
+    top: 149px; /* Vertical position */
+    left: 51px; /* Horizontal position */
+    right: 50px; /* Right padding */
+    bottom: 539px; /* Bottom padding */
+    width: calc(100% - 101px); /* Keep padding consistent */
+    height: auto; /* Keep aspect ratio */
+}
+
+/* Styling for the "Bascom Hall" text inside pop-up */
+.popUpTitle {
+    position: absolute;
+    top: 330px;
+    left: 39px;
+    width: 315px;
+    height: 37px;
+    font-family: "Gill Sans", sans-serif; /* Font style */
+    font-weight: bold; /* Bold text */
+    font-size: 24px; /* Font size */
+    line-height: 40px;
+    text-align: center;
+    color: black; /* Black text */
+}
+
+/* Styling for the place icon inside pop-up */
+.placeIcon {
+    position: absolute;
+    top: 362px; /* Adjust vertical position */
+    left: 124px; 
+    width: 24px;
+    height: 24px;
+}
+
+/* Address text styling inside pop-up */
+.addressText {
+    position: absolute;
+    top: 362px; /* Align with place icon */
+    left: 154px; 
+    width: 113px; 
+    height: 24px;
+    font-family: "Gill Sans", sans-serif; 
+    font-size: 14px; 
+    line-height: 20px; 
+    color: #204553; /* Dark blue text color */
+    opacity: 0.6; /* Slightly transparent */
+    text-align: left;
+}
+
+/* Styling for the "1859" text */
+.yearText {
+    position: absolute;
+    top: 437px;
+    left: 144px;
+    width: 105px;
+    height: 31px;
+    font-family: "Gill Sans", sans-serif; /* Font style */
+    font-weight: bold; /* Bold text */
+    font-size: 22px; /* Font size */
+    color: #000; /* Black text */
+    text-align: center;
+}
+
+/* Styling for "Year Constructed" text */
+.yearConstructedText {
+    position: absolute;
+    top: 460px; /* Adjusted vertical position */
+    left: 148px;  
+    width: 101px;  
+    font-family: "Gill Sans", sans-serif;  
+    font-size: 12px;  
+    color: #000;  
+    opacity: 0.4;  /* More transparent */
+    text-align: center;
+}
+
+/* Description text inside the pop-up */
+.descriptionText {
+    position: absolute;
+    top: 515px;  /* Adjusted vertical position */
+    left: 42px;  
+    width: 312px; 
+    font-family: "Gill Sans", sans-serif;  
+    font-size: 14px;  
+    color: #000;  
+    text-align: left;
+    line-height: 1.5;  /* Improved readability */
+}
+
+/* "More information" button inside the pop-up */
+.moreInfoButton {
+    position: absolute;
+    bottom: 40px; /* Position it near the bottom */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%);
+    width: 179px;
+    height: 70px;
+    background-color: #030303; /* Dark background */
+    color: white; /* White text */
+    font-family: "Gill Sans", sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px; /* Rounded button */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+.moreInfoButton:hover {
+    background-color: #202020; /* Darker color on hover */
+}
+
+/* Back Button styling */
+.backButton {
+    position: absolute;
+    top: 55px;  /* Vertical position */
+    left: 39px;  /* Horizontal position */
+    width: 50px;  /* Button width */
+    height: 60px;  /* Button height */
+    background-color: #ffffff;  /* White background */
+    border: 2px solid #DEEAF5;  /* Border color */
+    border-radius: 20px;  /* Rounded corners */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border 0.3s ease; /* Smooth transition */
+    z-index: 10000;  /* Keep on top */
+}
+
+.backButton:hover {
+    background-color: #e0e0e0;  /* Light gray on hover */
+}
+
+/* Back icon inside the button */
+.backIcon {
+    width: 13px;  /* Icon width */
+    height: 13px;  /* Icon height */
+    object-fit: contain;  /* Ensure icon fits well */
+}
