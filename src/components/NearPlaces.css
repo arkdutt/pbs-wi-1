@@ -4,6 +4,8 @@
 }
 
 .near-places h2 {
+    text-align: left;
+    margin-left:5px;
     margin-bottom: 20px;
     font-weight: normal;
     color: #204553;

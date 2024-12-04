@@ -1,20 +1,19 @@
 import React from 'react';
 import './FloatingButton.css';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
 
-function FloatingButton() {
-    const navigate = useNavigate(); // Initialize navigate hook
+function FloatingButton({ handleClick }) {
+    const navigate = useNavigate();
 
-    const handleClick = (e) => {
-        e.preventDefault(); // Prevent default anchor behavior
-        navigate('/ar'); // Navigate to AR
+    const handleButtonClick = (e) => {
+        e.preventDefault();
+        handleClick();
     };
 
     return (
-        <a href="#" className="floating-btn material-icons" onClick={handleClick}>
+        <a href="#" className="floating-btn material-icons" onClick={handleButtonClick}>
             center_focus_strong
         </a>
     );
 }
-
 export default FloatingButton;

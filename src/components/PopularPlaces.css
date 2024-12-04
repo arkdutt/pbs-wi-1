@@ -4,6 +4,8 @@
 }
 
 .popular-places h2 {
+    text-align: left;
+    margin-left: 5px;
     margin-top: 0px;
     margin-bottom: 20px;
     font-weight: normal;

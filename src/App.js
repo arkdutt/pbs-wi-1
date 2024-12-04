@@ -36,11 +36,13 @@
 // export default App;
 import React from 'react';
 import './App.css';
+import './styles/global.css';
 import Header from './components/Header';
 import Location from './components/Location';
 import PopularPlaces from './components/PopularPlaces';
 import NearPlaces from './components/NearPlaces';
 import Nav from './components/Nav';
+import FloatingButton from './components/FloatingButton';
 import MindARViewer from './components/MindARViewer'; // Ensure this is correctly imported
 
 function App() {
@@ -63,11 +65,7 @@ function App() {
           <PopularPlaces />
           <NearPlaces />
           <Nav />
-          <div className="start-button-container">
-            <button className="start-button" onClick={handleStart}>
-              Start AFRAME Version
-            </button>
-          </div>
+          <FloatingButton handleClick={handleStart} />
         </>
       ) : (
         <div className="container">
