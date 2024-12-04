@@ -48,27 +48,59 @@ export default () => {
   return (
     <a-scene 
     ref={sceneRef} 
-    mindar-image="imageTargetSrc: https://cdn.glitch.global/436a8662-ce0c-4fde-a24a-aa50c450c72e/james-ben.mind?v=1732943277541; autoStart: false; uiLoading: no; uiError: no; uiScanning: no; filterMinCF: 0.0001; missTolerance: 5; filterBeta: 0.007;" // filterMinCF: 0.001; filterBeta: 1000;
+    mindar-image="imageTargetSrc: https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/ForwardRewindMarkers.mind?v=1733176852299; autoStart: false; uiLoading: no; uiError: no; uiScanning: no; filterMinCF: 0.0001; missTolerance: 5; filterBeta: 0.007;" // filterMinCF: 0.001; filterBeta: 1000;
     color-space="sRGB" 
     embedded renderer="colorManagement: true, physicallyCorrectLights" 
     vr-mode-ui="enabled: false" 
     device-orientation-permission-ui="enabled: false">
       <a-assets>
-        {/* <img id="card" src="https://cdn.glitch.global/436a8662-ce0c-4fde-a24a-aa50c450c72e/James-Doty.jpg?v=1733090993201" /> */}
-        <a-asset-item id="jamesDoty" src=" https://cdn.glitch.global/68e5af42-4925-411b-a090-64dcec22f1bb/James-Doty.glb?v=1732585994143"></a-asset-item>
-        <a-asset-item id="ben" src=" https://cdn.glitch.global/436a8662-ce0c-4fde-a24a-aa50c450c72e/George-Post.glb?v=1732943396474"></a-asset-item>
-      </a-assets>
+          <a-asset-item id="georgePost" src="https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/George-Post.glb?v=1733176910540"></a-asset-item>
+          <a-asset-item id="wisconsinCapitol" src="https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/WisconsinCapitol.glb?v=1733169937656"></a-asset-item>
+          <a-asset-item id="wisconsinLady" src="https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/WisconsinLady.glb?v=1733169536761"></a-asset-item>
+          <a-asset-item id="jamesDoty" src="https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/James-Doty-2.glb?v=1733018433769"></a-asset-item>
+        </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-      <a-entity mindar-image-target="targetIndex: 1">
-        {/* <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane> */}
-        <a-gltf-model rotation="0 0 0" position="0 0 0.1" scale="0.5 0.5 0.5" src="#jamesDoty"></a-gltf-model>
-      </a-entity>
+      {/* Marker 0: George Post */}
       <a-entity mindar-image-target="targetIndex: 0">
-        {/* <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane> */}
-        <a-gltf-model rotation="0 0 0" position="0 0 0.1" scale="0.5 0.5 0.5" src="#ben"></a-gltf-model>
-      </a-entity>
+          <a-gltf-model
+            rotation="0 0 0"
+            position="0 0 0.1"
+            scale="0.5 0.5 0.5"
+            src="#georgePost"
+          ></a-gltf-model>
+        </a-entity>
+
+        {/* Marker 1: Wisconsin Capitol */}
+        <a-entity mindar-image-target="targetIndex: 1">
+          <a-gltf-model
+            rotation="0 0 0"
+            position="0 0 0.1"
+            scale="0.5 0.5 0.5"
+            src="#wisconsinCapitol"
+          ></a-gltf-model>
+        </a-entity>
+
+        {/* Marker 2: Wisconsin Lady */}
+        <a-entity mindar-image-target="targetIndex: 2">
+          <a-gltf-model
+            rotation="0 0 0"
+            position="0 0 0.1"
+            scale="0.5 0.5 0.5"
+            src="#wisconsinLady"
+          ></a-gltf-model>
+        </a-entity>
+
+        {/* Marker 3: James Doty */}
+        <a-entity mindar-image-target="targetIndex: 3">
+          <a-gltf-model
+            rotation="0 0 0"
+            position="0 0 0.1"
+            scale="0.5 0.5 0.5"
+            src="#jamesDoty"
+          ></a-gltf-model>
+        </a-entity>
     </a-scene>
   );
 };
