@@ -1,0 +1,21 @@
+.back-btn {
+    position: fixed;
+    z-index: 1000;
+    top: 20px;
+    left: 20px;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    display: flex !important;
+    align-items: center;
+    border-radius: 25%;
+    font-size: 20px !important;
+    text-decoration: none;
+}
+
+.back-icon {
+    align-self: center;
+    height: 24px;
+    width: 24px;
+    margin-left: 24px;
+}

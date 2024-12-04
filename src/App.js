@@ -44,6 +44,7 @@ import NearPlaces from './components/NearPlaces';
 import Nav from './components/Nav';
 import FloatingButton from './components/FloatingButton';
 import MindARViewer from './components/MindARViewer'; // Ensure this is correctly imported
+import BackButton from './components/BackButton';
 
 function App() {
   const [started, setStarted] = React.useState(false);
@@ -68,10 +69,8 @@ function App() {
           <FloatingButton handleClick={handleStart} />
         </>
       ) : (
-        <div className="container">
-          <button className="stop-button" onClick={handleStop}>
-            Stop AR
-          </button>
+        <div className="camera-container">
+          <BackButton handleClick={handleStop} />
           <MindARViewer />
         </div>
       )}
