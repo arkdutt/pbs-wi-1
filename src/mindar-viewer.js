@@ -11,6 +11,7 @@ export default () => {
     sceneEl.addEventListener('renderstart', () => {
       arSystem.start(); // start AR 
     });
+  
     return () => {
       arSystem.stop();
     }
