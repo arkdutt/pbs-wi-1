@@ -48,7 +48,7 @@ export default () => {
   return (
     <a-scene 
     ref={sceneRef} 
-    mindar-image="imageTargetSrc: https://cdn.glitch.global/436a8662-ce0c-4fde-a24a-aa50c450c72e/james-ben.mind?v=1732943277541; autoStart: false; uiLoading: no; uiError: no; uiScanning: no; filterMinCF: 0.0001; missTolerance: 5; filterBeta: 0.01;" // filterMinCF: 0.001; filterBeta: 1000;
+    mindar-image="imageTargetSrc: https://cdn.glitch.global/436a8662-ce0c-4fde-a24a-aa50c450c72e/james-ben.mind?v=1732943277541; autoStart: false; uiLoading: no; uiError: no; uiScanning: no; filterMinCF: 0.0001; missTolerance: 5; filterBeta: 0.007;" // filterMinCF: 0.001; filterBeta: 1000;
     color-space="sRGB" 
     embedded renderer="colorManagement: true, physicallyCorrectLights" 
     vr-mode-ui="enabled: false" 
