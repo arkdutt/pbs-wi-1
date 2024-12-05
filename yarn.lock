@@ -8283,6 +8283,11 @@ react-scripts@^5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
+react-user-onboarding@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/react-user-onboarding/-/react-user-onboarding-0.0.3.tgz"
+  integrity sha512-gEZlJkY/8I9BnM394AaZmltiVMtXdnAdx474sQm9En2mcWZCKVV7tcdIHtx55VFiMA+JGFoKsS2roIOsULWhHQ==
+
 react@*, react@^18.2.0, "react@>= 16", react@>=18:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"

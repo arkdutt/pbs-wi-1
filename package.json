@@ -12,6 +12,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.0.2",
     "react-scripts": "^5.0.1",
+    "react-user-onboarding": "^0.0.3",
     "three": "^0.150.1",
     "web-vitals": "^1.0.1"
   },
