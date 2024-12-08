@@ -37,7 +37,6 @@ export default function MindARViewer() {
     // Add render start event listener
     sceneEl?.addEventListener("renderstart", handleRenderStart);
 
-    // Add event listeners for each speaker icon and play button
     const addEventListeners = () => {
       const audioUrls = {
         "speaker-icon-0": "https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/George%20B.Post.mp3?v=1733346203149",
@@ -45,35 +44,42 @@ export default function MindARViewer() {
         "speaker-icon-2": "https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/LadyWisconsin.mp3?v=1733279577467",
         "speaker-icon-3": "https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/DotysWashbowl.mp3?v=1733022223353",
       };
-
+    
+      let currentAudio = null; // Store the currently playing audio object
+    
       Object.keys(audioUrls).forEach((id) => {
         const element = document.getElementById(id);
         if (element) {
           element.addEventListener("click", () => {
-            const newAudio = new Audio(audioUrls[id]);
-
-            // Stop current audio if playing
-            if (currentAudio) {
-              currentAudio.pause();
-              currentAudio.currentTime = 0;
+            const audioUrl = audioUrls[id];
+    
+            // If the current audio is the same as the clicked one, toggle play/pause
+            if (currentAudio && currentAudio.src === audioUrl) {
+              if (currentAudio.paused) {
+                currentAudio.play();
+              } else {
+                currentAudio.pause();
+              }
+            } else {
+              // Stop the currently playing audio if another audio is playing
+              if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+              }
+    
+              // Create and play the new audio
+              const newAudio = new Audio(audioUrl);
+              newAudio.play();
+              currentAudio = newAudio; // Update the current audio reference
             }
-
-            // Play the new audio
-            newAudio
-              .play()
-              .then(() => {
-                console.log(`Playing audio for ${id}`);
-                setCurrentAudio(newAudio); // Update current audio
-              })
-              .catch((err) => console.error(`Audio playback failed for ${id}:`, err));
           });
         }
       });
-
+    
       // Add video play/pause functionality
       const playButton = document.getElementById("play-button");
       const videoPlane = document.getElementById("video-plane");
-
+    
       if (playButton && videoPlane) {
         playButton.addEventListener("click", () => {
           const videoElement = videoPlane.components.material.material.map.image;
@@ -87,6 +93,59 @@ export default function MindARViewer() {
         });
       }
     };
+
+
+
+    // // Add event listeners for each speaker icon and play button
+    // const addEventListeners = () => {
+    //   const audioUrls = {
+    //     "speaker-icon-0": "https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/George%20B.Post.mp3?v=1733346203149",
+    //     "speaker-icon-1": "https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/WisconsinCapitol.mp3?v=1733279649928",
+    //     "speaker-icon-2": "https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/LadyWisconsin.mp3?v=1733279577467",
+    //     "speaker-icon-3": "https://cdn.glitch.global/84be45ad-dc75-4cd9-ba4f-7faa0bd8a924/DotysWashbowl.mp3?v=1733022223353",
+    //   };
+
+    //   Object.keys(audioUrls).forEach((id) => {
+    //     const element = document.getElementById(id);
+    //     if (element) {
+    //       element.addEventListener("click", () => {
+    //         const newAudio = new Audio(audioUrls[id]);
+
+    //         // Stop current audio if playing
+    //         if (currentAudio) {
+    //           currentAudio.pause();
+    //           currentAudio.currentTime = 0;
+    //         }
+
+    //         // Play the new audio
+    //         newAudio
+    //           .play()
+    //           .then(() => {
+    //             console.log(`Playing audio for ${id}`);
+    //             setCurrentAudio(newAudio); // Update current audio
+    //           })
+    //           .catch((err) => console.error(`Audio playback failed for ${id}:`, err));
+    //       });
+    //     }
+    //   });
+
+    //   // Add video play/pause functionality
+    //   const playButton = document.getElementById("play-button");
+    //   const videoPlane = document.getElementById("video-plane");
+
+    //   if (playButton && videoPlane) {
+    //     playButton.addEventListener("click", () => {
+    //       const videoElement = videoPlane.components.material.material.map.image;
+    //       if (videoElement.paused) {
+    //         videoElement.play();
+    //         videoPlane.setAttribute("visible", "true");
+    //       } else {
+    //         videoElement.pause();
+    //         videoPlane.setAttribute("visible", "false");
+    //       }
+    //     });
+    //   }
+    // };
 
     // Wait for DOM elements to be ready before adding event listeners
     sceneEl?.addEventListener("loaded", addEventListeners);
