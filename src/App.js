@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import './styles/global.css';
 import Header from './components/Header';
@@ -15,6 +15,7 @@ import OnboardingScreens from './components/OnboardingScreens';
 function App() {
   const [currState, setState] = React.useState('home');
   const [showOnboarding, setShowOnboarding] = useState(false);
+  
   const locationRef = useRef();
   const arButtonRef = useRef();
 
