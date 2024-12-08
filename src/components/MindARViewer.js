@@ -77,6 +77,23 @@ export default function MindARViewer() {
           });
         }
       });
+      // Add video play/pause functionality
+      const playButton = document.getElementById("play-button");
+      const videoPlane = document.getElementById("video-plane");
+    
+      if (playButton && videoPlane) {
+        playButton.addEventListener("click", () => {
+          const videoElement = videoPlane.components.material.material.map.image;
+          if (videoElement.paused) {
+            videoElement.play();
+            videoPlane.setAttribute("visible", "true");
+          } else {
+            videoElement.pause();
+            videoPlane.setAttribute("visible", "false");
+          }
+        });
+      }
+
 
       // CC Button Functionality
       document.querySelectorAll(".cc-icon").forEach((ccElement) => {
