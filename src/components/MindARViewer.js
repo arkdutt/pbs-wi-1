@@ -8,6 +8,9 @@ export default function MindARViewer() {
   const sceneRef = useRef(null);
   const [popupText, setPopupText] = useState(null);
 
+  // Keep track of all audio instances
+  const audioInstancesRef = useRef([]);
+
   useEffect(() => {
     const sceneEl = sceneRef.current;
     let arSystem = null;
@@ -56,6 +59,8 @@ export default function MindARViewer() {
           speakerIcon.addEventListener("click", () => {
             if (!audioInstance) {
               audioInstance = new Audio(audioUrl);
+              // Store the instance for cleanup later
+              audioInstancesRef.current.push(audioInstance);
             }
             // Toggle play/pause on click
             if (audioInstance.paused) {
@@ -294,6 +299,14 @@ export default function MindARViewer() {
 
     // On component unmount, remove all event listeners to prevent memory leaks.
     return () => {
+      // Pause and reset all audio instances
+      audioInstancesRef.current.forEach((audio) => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+      audioInstancesRef.current = [];
+
+      
       models.forEach((model) => {
         const handler = cleanupHandlers.get(model.id);
         if (handler) {
