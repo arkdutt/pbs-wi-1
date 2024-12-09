@@ -315,8 +315,10 @@ export default function MindARViewer() {
             position: "absolute",
             top: "10%",
             left: "10%",
-            background: "rgba(0, 0, 0, 0.8)",
-            color: "#fff",
+            background: "rgba(255, 255, 255, 0.8)", // Transparent white background
+            color: "purple", // Purple text
+            borderColor: "black",
+            fontWeight: "bold",
             padding: "20px",
             borderRadius: "10px",
             zIndex: 1000,
@@ -341,13 +343,14 @@ export default function MindARViewer() {
               background: "transparent",
               border: "none",
               fontSize: "16px",
-              color: "#fff",
+              color: "red", // Red "X" button
               cursor: "pointer",
               fontWeight: "bold",
             }}
           >
             &times;
           </button>
+
         </div>
       )}
 
