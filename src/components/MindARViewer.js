@@ -511,7 +511,8 @@ export default function MindARViewer() {
             src="https://cdn.glitch.global/142aa6f9-3bd6-4455-b12e-f96d9dc9bd7d/closed-captioning-icon-in-gradient-colors-cc-signs-illustration-png.webp?v=1733639276440"
             position="-0.4 -0.3 0"
             scale="0.1 0.1 0.1"
-            data-text="To understand the Wisconsin State Capitol, it helps to look to New York City. That’s where the building’s architect, George B. Post, lived most of his life and designed many innovative buildings of his era."
+            data-text="To understand the Wisconsin State Capitol, it helps to look to New York City. 
+    That’s where the building’s architect, George B. Post, lived most of his life and designed many innovative buildings of his era."
           ></a-image>
         </a-entity>
 
@@ -538,7 +539,11 @@ export default function MindARViewer() {
             src="https://cdn.glitch.global/142aa6f9-3bd6-4455-b12e-f96d9dc9bd7d/closed-captioning-icon-in-gradient-colors-cc-signs-illustration-png.webp?v=1733639276440"
             position="-0.6 -0.3 0"
             scale="0.1 0.1 0.1"
-            data-text="The Wisconsin State Capitol stands majestically at the heart of downtown Madison, a towering symbol of the state’s government and rich history. Its gleaming white dome rises above the city skyline, reflecting not only the architectural beauty but also the stories of the people and events that have shaped Wisconsin.\n\nConstruction on the current Capitol began in 1906, but this wasn’t the first Capitol building on the site. Two previous structures had stood in its place—both of which were destroyed by fires, the second of which occurred in 1904, leaving the state in need of a new, grander home for its government. Determined to build something that would stand the test of time, the state enlisted the help of George B. Post, a renowned architect from New York."
+            data-text="The Wisconsin State Capitol stands majestically at the heart of downtown Madison, a towering symbol of the state’s government and rich history. 
+    Its gleaming white dome rises above the city skyline, reflecting not only the architectural beauty but also the stories of the people and events that have shaped Wisconsin. 
+    Construction on the current Capitol began in 1906, but this wasn’t the first Capitol building on the site. 
+    Two previous structures had stood in its place—both of which were destroyed by fires, the second of which occurred in 1904, leaving the state in need of a new, grander home for its government. 
+    Determined to build something that would stand the test of time, the state enlisted the help of George B. Post, a renowned architect from New York."
           ></a-image>
         </a-entity>
 
@@ -580,7 +585,9 @@ export default function MindARViewer() {
             src="https://cdn.glitch.global/142aa6f9-3bd6-4455-b12e-f96d9dc9bd7d/closed-captioning-icon-in-gradient-colors-cc-signs-illustration-png.webp?v=1733639276440"
             position="-0.4 -0.3 0"
             scale="0.1 0.1 0.1"
-            data-text="Commonly mistaken for Miss Forward, this statue is actually named Wisconsin. Standing at a height of 15 feet and five inches and weighing three tons, it proudly sits atop the Wisconsin State Capitol building. The statue was crafted by Daniel Chester French, the same artist behind the iconic statue of Abraham Lincoln at the Lincoln Memorial in Washington, DC."
+            data-text="Commonly mistaken for Miss Forward, this statue is actually named Wisconsin. 
+    Standing at a height of 15 feet and five inches and weighing three tons, it proudly sits atop the Wisconsin State Capitol building. 
+    The statue was crafted by Daniel Chester French, the same artist behind the iconic statue of Abraham Lincoln at the Lincoln Memorial in Washington, DC."
           ></a-image>
         </a-entity>
 
@@ -607,7 +614,8 @@ export default function MindARViewer() {
             src="https://cdn.glitch.global/142aa6f9-3bd6-4455-b12e-f96d9dc9bd7d/closed-captioning-icon-in-gradient-colors-cc-signs-illustration-png.webp?v=1733639276440"
             position="-0.6 -0.3 0"
             scale="0.1 0.1 0.1"
-            data-text="Madison's first Capitol Building was constructed on the square Doty at earmark.\nBy the time Wisconsin achieved statehood in 1848, this cold and leaky capital had earned the uncomplimentary nickname 'Doty's Wash Bowl.'"
+            data-text="Madison's first Capitol Building was constructed on the square Doty at earmark. 
+    By the time Wisconsin achieved statehood in 1848, this cold and leaky capital had earned the uncomplimentary nickname 'Doty's Wash Bowl.'"
           ></a-image>
         </a-entity>
       </a-scene>
