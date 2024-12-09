@@ -8,9 +8,9 @@ function OnboardingButton({ handleClick }) {
     };
 
     return (
-        <a href="#" className="onboarding-btn material-icons" onClick={handleButtonClick}>
+        <button className="onboarding-btn material-icons" onClick={handleButtonClick}>
             question_mark
-        </a>
+        </button>
     );
 }
 export default OnboardingButton;

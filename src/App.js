@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef} from 'react';
 import './App.css';
 import './styles/global.css';
 import Header from './components/Header';
@@ -17,6 +17,7 @@ function App() {
   const [showOnboarding, setShowOnboarding] = useState(false);
   
   const locationRef = useRef();
+  const containersRef = useRef();
   const arButtonRef = useRef();
 
   // Functions to handle state changes
@@ -42,8 +43,10 @@ function App() {
         <>
           <Header />
           <Location ref={locationRef} />
-          <PopularPlaces />
-          <NearPlaces />
+          <div ref={containersRef}>
+            <PopularPlaces />
+            <NearPlaces />
+          </div>
           <Nav />
           <FloatingButton ref={arButtonRef} handleClick={arStart} />
           <OnboardingButton handleClick={startOnboarding} />
@@ -52,6 +55,7 @@ function App() {
             handleClose={handleOnboardingClose}
             locationRef={locationRef}
             arButtonRef={arButtonRef}
+            containersRef={containersRef}
           /> 
         </>
       ) : currState === 'ar' ? (
