@@ -15,7 +15,7 @@ const OnboardingScreens = ({
       target: 'body',
       content: (
         <div className="welcome-content">
-          <h2>Welcome to PBS Wisconsin's AR experience!</h2>
+          <h2>Welcome to <br /><span style={{ color: 'var(--primary)', fontFamily: 'PBSSans-Bold' }}>PBS Wisconsin's</span><br/>AR experience!</h2>
           <p>Let's explore Wisconsin landmarks in augmented reality!</p>
         </div>
       ),
@@ -26,7 +26,7 @@ const OnboardingScreens = ({
       content: (
         <div className='location-content'>
             <p>
-            Click & Allow Location Access to automatically find places near you!
+            Click & Allow <span style={{ color: 'var(--primary)', fontFamily: 'PBSSans-Bold' }}>Location Access</span> to automatically find places near you!
             </p>
         </div>
       ),
@@ -36,7 +36,7 @@ const OnboardingScreens = ({
         target: containersRef.current,
         content: (
             <div className='containers-content'>
-                <p>Click on a place to learn more about it!</p>
+                <p>Click on a <span style={{ color: 'var(--primary)', fontFamily: 'PBSSans-Bold' }}>landmark</span> to learn more about it!</p>
             </div>
         ),
         placement: 'top',
@@ -45,7 +45,7 @@ const OnboardingScreens = ({
       target: arButtonRef.current,
       content: (
         <div className='arbutton-content'>
-          <p>Click here to start the augmented reality experience</p>
+          <p>Click here to start the <br /><span style={{ color: 'var(--primary)', fontFamily: 'PBSSans-Bold' }}>Augmented Reality</span> experience!</p>
         </div>
       ),
       placement: 'top',
@@ -59,9 +59,9 @@ const OnboardingScreens = ({
         target: 'body',
         content: (
             <div className='point-phone-content'>
-                <h2>Just Point!</h2>
+                <span style={{ color: 'var(--primary)', fontFamily: 'PBSSans-Bold' }}><h2>Just Point!</h2> </span>
                 <img src = {pointPhoneImg} alt='Point Phone' style={{ width: '150px'}}/>
-                <p style={{ marginLeft: '15px', marginRight: '15px'}}>Simply pull your phone out and point it at one of our supported sites and enjoy the experience!</p>
+                <p style={{ marginLeft: '15px', marginRight: '15px'}}>Simply pull your phone out and <span style={{ color: 'var(--primary)', fontFamily: 'PBSSans-Bold' }}>point it</span> at one of our supported sites and enjoy the experience!</p>
             </div>
         ),
         placement: 'center',
@@ -91,6 +91,7 @@ const OnboardingScreens = ({
             zIndex: 10000,
             backgroundColor: '#ffffff',
             primaryColor: 'var(--primary)',
+            width: '360px',
         },
         tooltipContainer: {
             fontFamily: 'PBSSans, sans-serif',
@@ -100,6 +101,7 @@ const OnboardingScreens = ({
         },
         tooltipContent: {
             fontFamily: 'PBSSans, sans-serif',
+            fontSize: '18px',
         },
         buttonNext: {
             fontFamily: 'PBSSans, sans-serif',

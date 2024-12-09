@@ -78,7 +78,7 @@ function PopularPlaces() {
 
     return (
         <div className="near-places">
-            <h2><b>Popular</b> Places</h2>
+            <h2 style={{paddingLeft: '10px'}}><b>Popular</b> Places</h2>
             <div className="cards-container">
                 {places.map(place => (
                     <Card

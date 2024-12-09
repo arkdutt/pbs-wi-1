@@ -2,10 +2,11 @@
     flex: 0 0 auto;
     width: 150px;
     height: 230px;
-    margin-right: 10px;
+    margin: 10px;
     border-radius: 20px;
     overflow: hidden;
-    background-color: #d9d9d9;
+    background-color: white;
+    box-shadow: 0px 2px 10px var(--shadow);
     text-align: center;
 }
 
@@ -13,7 +14,8 @@
     width: 140px;
     height: 140px;
     padding: 5px 0;
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     object-fit: cover;
 }
 
@@ -22,6 +24,8 @@
     margin-left: 15px;
     vertical-align: bottom;
     text-align: left;
-    font-size: 20px;
-    color: white;
+    font-size: 18px;
+    color: #204553;
+    font-family: 'PBSSans';
+    line-height: 24px;
 }

@@ -25,6 +25,11 @@ body {
 }
 
 @font-face {
+    font-family: 'PBSSans-Bold';
+    src: url('../assets/fonts/PBSSans-Bold.ttf');
+}
+
+@font-face {
     font-family: 'Calibri';
     src: url('../assets/fonts/calibri.ttf');
 }

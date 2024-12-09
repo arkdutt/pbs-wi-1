@@ -42,6 +42,7 @@ function App() {
       {currState === 'home' ? (
         <>
           <Header />
+          <OnboardingButton handleClick={startOnboarding} />
           <Location ref={locationRef} />
           <div ref={containersRef}>
             <PopularPlaces />
@@ -49,7 +50,6 @@ function App() {
           </div>
           <Nav />
           <FloatingButton ref={arButtonRef} handleClick={arStart} />
-          <OnboardingButton handleClick={startOnboarding} />
           <OnboardingScreens 
             isVisible={showOnboarding}
             handleClose={handleOnboardingClose}
