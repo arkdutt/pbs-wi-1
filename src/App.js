@@ -1,4 +1,4 @@
-import React, { useState, useRef} from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import './App.css';
 import './styles/global.css';
 import Header from './components/Header';
@@ -36,6 +36,21 @@ function App() {
   const handleOnboardingClose = () => {
     setShowOnboarding(false);
   }
+
+  // Disable scrolling when in 'ar' state
+  useEffect(() => {
+    if (currState === 'ar') {
+      // Disable scrolling
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Enable scrolling
+      document.body.style.overflow = 'auto';
+    }
+    // Cleanup function to reset overflow when the component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [currState]);
 
   return (
     <div className="App">
