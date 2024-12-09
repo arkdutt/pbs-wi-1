@@ -26,7 +26,7 @@ const PopupHandler = ({ placeData, isActive, togglePopup }) => {
                 <div className="yearText">{placeData.yearConstructed}</div>
                 <div className="yearConstructedText">Year Constructed</div>
                 <div className="descriptionText">{placeData.history}</div>
-                <button className="moreInfoButton">More information</button>
+                {/* <button className="moreInfoButton">More information</button> */}
                 <button onClick={togglePopup} className="backButton">
                     <img src={BackIcon} alt="Back Icon" className="backIcon" />
                 </button>
