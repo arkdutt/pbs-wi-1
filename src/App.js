@@ -1,40 +1,4 @@
-// import React, { useState } from 'react';
-// import './App.css';
-// import MindARViewer from './mindar-viewer';
-// import MindARThreeViewer from './mindar-three-viewer';
-
-// function App() {
-//   const [started, setStarted] = useState(null);
-
-//   return (
-    
-//     <div className="App">
-//       <h1>Example React component with <a href="https://github.com/hiukim/mind-ar-js" target="_blank">MindAR</a></h1>
-
-//       <div className="control-buttons">
-//         {started === null && <button onClick={() => {setStarted('aframe')}}>Start AFRAME version</button>}
-//         {started === null && <button onClick={() => {setStarted('three')}}>Start ThreeJS version</button>}
-//         {started !== null && <button onClick={() => {setStarted(null)}}>Stop</button>}
-//       </div>
-
-//       {started === 'aframe' && (
-//         <div className="container">
-//           <MindARViewer/>
-//           <video></video>
-//         </div>
-//       )}
-
-//       {started === 'three' && (
-//         <div className="container">
-//           <MindARThreeViewer />
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default App;
-import React from 'react';
+import React, { useState, useRef} from 'react';
 import './App.css';
 import './styles/global.css';
 import Header from './components/Header';
@@ -45,35 +9,61 @@ import Nav from './components/Nav';
 import FloatingButton from './components/FloatingButton';
 import MindARViewer from './components/MindARViewer'; // Ensure this is correctly imported
 import BackButton from './components/BackButton';
+import OnboardingButton from './components/OnboardingButton';
+import OnboardingScreens from './components/OnboardingScreens';
 
 function App() {
-  const [started, setStarted] = React.useState(false);
+  const [currState, setState] = React.useState('home');
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  
+  const locationRef = useRef();
+  const containersRef = useRef();
+  const arButtonRef = useRef();
 
-  const handleStart = () => {
-    setStarted(true);
+  // Functions to handle state changes
+  const arStart = () => {
+    setState('ar');
   };
 
-  const handleStop = () => {
-    setStarted(false);
+  const goHome = () => {
+    setState('home');
   };
+
+  const startOnboarding = () => {
+    setShowOnboarding(true);
+  }
+
+  const handleOnboardingClose = () => {
+    setShowOnboarding(false);
+  }
 
   return (
     <div className="App">
-      {!started ? (
+      {currState === 'home' ? (
         <>
           <Header />
-          <Location />
-          <PopularPlaces />
-          <NearPlaces />
+          <Location ref={locationRef} />
+          <div ref={containersRef}>
+            <PopularPlaces />
+            <NearPlaces />
+          </div>
           <Nav />
-          <FloatingButton handleClick={handleStart} />
+          <FloatingButton ref={arButtonRef} handleClick={arStart} />
+          <OnboardingButton handleClick={startOnboarding} />
+          <OnboardingScreens 
+            isVisible={showOnboarding}
+            handleClose={handleOnboardingClose}
+            locationRef={locationRef}
+            arButtonRef={arButtonRef}
+            containersRef={containersRef}
+          /> 
         </>
-      ) : (
+      ) : currState === 'ar' ? (
         <div className="camera-container">
-          <BackButton handleClick={handleStop} />
+          <BackButton handleClick={goHome} />
           <MindARViewer />
         </div>
-      )}
+      ): null}
     </div>
   );
 }

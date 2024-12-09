@@ -10,9 +10,9 @@ function BackButton({ handleClick }) {
     };
 
     return (
-        <a href="#" className="back-btn" onClick={handleButtonClick}>
+        <button className="back-btn" onClick={handleButtonClick}>
             <img src={back_icon} alt='Back Icon' className='back-icon'/> 
-        </a>
+        </button>
     );
 }
 export default BackButton;
