@@ -331,18 +331,22 @@ export default function MindARViewer() {
               {paragraph}
             </p>
           ))}
+          {/* "X" Button to Close the Popup */}
           <button
             onClick={() => setPopupText(null)}
             style={{
-              marginTop: "10px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              background: "transparent",
               border: "none",
-              padding: "10px 20px",
+              fontSize: "16px",
+              color: "#fff",
               cursor: "pointer",
+              fontWeight: "bold",
             }}
           >
-            Close
+            &times;
           </button>
         </div>
       )}
