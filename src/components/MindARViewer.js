@@ -316,8 +316,8 @@ export default function MindARViewer() {
             top: "10%",
             left: "10%",
             background: "rgba(255, 255, 255, 0.8)", // Transparent white background
-            color: "purple", // Purple text
-            borderColor: "black",
+            color: "#263864", // Purple text
+            borderColor: "#263864",
             fontWeight: "bold",
             padding: "20px",
             borderRadius: "10px",
