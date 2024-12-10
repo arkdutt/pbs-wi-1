@@ -71,12 +71,12 @@ Technologies Used: MindAR, JavaScript, A-Frame, CSS/HTML
 Contributing Guidelines <Include how to fork the repository, make changes, and submit pull requests.>
 
 Team and Contributors
-- **Developers**
+- **Developers**:
   Ark Dutt: dutt3@wisc.edu
   Aditya Vakharia: avakharia@wisc.edu
   Woody Chang: chang289@wisc.edu
   Sunghyeok Hwang: shwang98@wisc.edu
-- **Product Owner**
+- **Product Owner**:
   Sneha Dutta Roy: sduttaroy@wisc.edu
 
 What works:
