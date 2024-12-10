@@ -1,7 +1,7 @@
-Forward Rewind AR Web App  
+# Forward Rewind AR Web App  
 Welcome to the Forward Rewind AR Web App repository! This project is an immersive and interactive web application developed in collaboration with PBS Wisconsin. The app serves as a virtual tour guide, offering an augmented reality (AR) experience that allows users to explore historical locations and events in an engaging and educational way.
 
-Table of Contents
+# Table of Contents
 - About the Project
 - Features
 - Getting Started
@@ -14,19 +14,19 @@ Table of Contents
 - What does not work
 - Next Steps
 
-About the Project  
+# About the Project  
 Forward Rewind is a team effort aimed at creating a web app that brings history to life using AR technology. Our goal is to make learning about history not only informative but also fun and immersive. The app allows users to explore historical landmarks and events as if they were physically present, providing contextual information, interactive elements, and multimedia content.
 
 The collaboration with PBS Wisconsin ensures that the content is accurate, educational, and accessible to users of all ages.
 
-Features
+# Features
 - Augmented Reality Tours: Use AR to experience historical sites in a virtual setting.
 - Interactive Content: Learn through engaging multimedia, including scrollable captions, audio with functionality to pause, and AR models.
 - Self-Guided Exploration: Navigate the virtual tour at your own pace.
 - Educational Insights: Get detailed information about historical events and landmarks.
 
 
-Getting Started  
+# Getting Started  
 To start using the Forward Rewind AR Web App, follow the instructions below.
 
 Prerequisites
@@ -45,7 +45,7 @@ To start the local development server, run:
 npm start  
 Then open your web browser and navigate to https://pbs-wi-1.com/ to access the app.  
 
-Usage  
+# Usage  
 - Launch the app and allow access to your device's camera.
 - Follow the on-screen prompts to start a tour.
 - Click on any tile to view more information on the tourist destination you clicked into.
@@ -66,11 +66,13 @@ OR for HTTPS (so you can test on mobile devices connected in local network)
 > npm run start-https
 ```
 
-Technologies Used: MindAR, JavaScript, A-Frame, CSS/HTML
+# Technologies Used
+MindAR, JavaScript, A-Frame, CSS/HTML
 
-Contributing Guidelines <Include how to fork the repository, make changes, and submit pull requests.>
+# Contributing Guidelines
+<Include how to fork the repository, make changes, and submit pull requests.>
 
-Team and Contributors
+# Team and Contributors
 - **Developers**:
   Ark Dutt- dutt3@wisc.edu,
   Aditya Vakharia- avakharia@wisc.edu,
@@ -79,13 +81,13 @@ Team and Contributors
 - **Product Owner**:
   Sneha Dutta Roy- sduttaroy@wisc.edu
 
-What works:
+# What works:
 The current code entirely works. It covers all pointers mentioned in 'Usage' section above.
 
-What does not work:
+# What does not work:
 Search tab is not functional right now. The expectation is to have a feature for user to search locations and read interesting stories  about them. The scope for this feature is open.
 
-Next steps:
+# Next steps:
 - Gather more storytelling elements (story audios, transcripts, and models) to cover more tourist destinations so that this app can be widely used.
 - Explore more user engagement options such as face recognition to overlay related accessories.
 - Host this on a domain owned by PBS Wisconsin. Current domain is being funded by team member Sunghyeok Hwang (shwang98@wisc.edu).
