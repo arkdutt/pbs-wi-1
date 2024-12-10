@@ -66,8 +66,7 @@ OR for HTTPS (so you can test on mobile devices connected in local network)
 > npm run start-https
 ```
 
-Technologies Used
-MindAR, JavaScript, A-Frame, CSS/HTML
+Technologies Used: MindAR, JavaScript, A-Frame, CSS/HTML
 
 Contributing Guidelines <Include how to fork the repository, make changes, and submit pull requests.>
 
