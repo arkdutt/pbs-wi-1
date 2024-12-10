@@ -81,13 +81,13 @@ MindAR, JavaScript, A-Frame, CSS/HTML
 - **Product Owner**:
   Sneha Dutta Roy- sduttaroy@wisc.edu
 
-# What works:
+# What works
 The current code entirely works. It covers all pointers mentioned in 'Usage' section above.
 
-# What does not work:
+# What does not work
 Search tab is not functional right now. The expectation is to have a feature for user to search locations and read interesting stories  about them. The scope for this feature is open.
 
-# Next steps:
+# Next steps
 - Gather more storytelling elements (story audios, transcripts, and models) to cover more tourist destinations so that this app can be widely used.
 - Explore more user engagement options such as face recognition to overlay related accessories.
 - Host this on a domain owned by PBS Wisconsin. Current domain is being funded by team member Sunghyeok Hwang (shwang98@wisc.edu).
