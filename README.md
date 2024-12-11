@@ -67,10 +67,30 @@ OR for HTTPS (so you can test on mobile devices connected in local network)
 ```
 
 # Technologies Used
-MindAR, JavaScript, A-Frame, CSS/HTML
+Frameworks/Libraries: React, A-Frame, MindAR
+
+Languages: JavaScript, CSS, HTML
+
+Tooling: Node.js, npm
+
+AR Integration: MindAR (image tracking)
 
 # Contributing Guidelines
-<Include how to fork the repository, make changes, and submit pull requests.>
+1. Clone the Repository:
+git clone https://github.com/<your-username>/pbs-wi-1.git
+
+2. Create a Branch: Create a new branch for your feature or bug fix:
+git checkout -b feature/your-feature-name
+
+3. Make Changes: Implement your changes locally.
+
+4. Test Changes: Ensure your changes work as expected and do not break existing functionality.
+
+5. Commit Changes: Commit your changes with a descriptive message:
+git commit -m "Add your descriptive commit message"
+
+6. Push to Your Fork:
+git push origin feature/your-feature-name
 
 # Team and Contributors
 - **Developers**:
